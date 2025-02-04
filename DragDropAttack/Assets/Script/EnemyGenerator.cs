@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyWaveSpawner : MonoBehaviour
+public class EnemyGenerator : MonoBehaviour
 {
     public GameObject[] enemyPrefabs; // 10種類の敵プレハブ
     public int totalWaves = 5; // 合計ウェーブ数

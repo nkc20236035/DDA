@@ -316,8 +316,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs: []
   totalWaves: 5
-  spawnPoint: {fileID: 0}
-  targetPoint: {fileID: 0}
+  spawnPoint: {fileID: 822848759}
+  targetPoint: {fileID: 1962266172}
 --- !u!1 &2064337806
 GameObject:
   m_ObjectHideFlags: 0
