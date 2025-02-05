@@ -10,7 +10,7 @@ public class EnemyGenerator : MonoBehaviour
     public float spawnDelay = 0.5f;  // 敵の出現遅延
     public float moveSpeed = 5f;     // 敵の移動速度
 
-    private int currentWave = 0;
+    private int currentWave = 0;     // 現在のウェーブ
     private int totalEnemiesInWave = 0;  // 1ウェーブの敵の数
 
     private Vector3[] spawnOffsets =
