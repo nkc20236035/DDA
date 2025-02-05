@@ -147,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 822848758}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.24, y: -4.25, z: -0.3596124}
+  m_LocalPosition: {x: -4, y: -4.25, z: -0.3596124}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -314,10 +314,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3420f1417e397146833439e667b441c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefabs: []
-  totalWaves: 5
+  enemyPrefab:
+  - {fileID: 4921805076653860701, guid: 080ac4b169a50f549ab35dbc1e66f7bc, type: 3}
   spawnPoint: {fileID: 822848759}
-  targetPoint: {fileID: 1962266172}
+  waveCount: 5
+  spawnDelay: 0.5
+  moveSpeed: 5
 --- !u!1 &2064337806
 GameObject:
   m_ObjectHideFlags: 0

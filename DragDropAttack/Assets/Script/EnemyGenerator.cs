@@ -4,63 +4,81 @@ using UnityEngine;
 
 public class EnemyGenerator : MonoBehaviour
 {
-    public GameObject[] enemyPrefabs; // 10種類の敵プレハブ
-    public int totalWaves = 5; // 合計ウェーブ数
-    public Transform spawnPoint; // 画面左端のスポーン地点
-    public Transform targetPoint; // 中央よりやや左の目標地点
+    public GameObject[] enemyPrefab; // 敵オブジェクトを設定するところ
+    public Transform spawnPoint;     // 敵が生成される場所
+    public int waveCount = 5;        // バトルのウェーブ数
+    public float spawnDelay = 0.5f;  // 敵の出現遅延
+    public float moveSpeed = 5f;     // 敵の移動速度
 
     private int currentWave = 0;
-    private List<GameObject> activeEnemies = new List<GameObject>();
+    private int totalEnemiesInWave = 0;  // 1ウェーブの敵の数
+
+    private Vector3[] spawnOffsets =
+    {
+        new Vector3(-2f,1f,0f),
+        new Vector3(0f,2f,0f),
+        new Vector3(2f,3f,0f),
+    };
 
     void Start()
     {
-        StartCoroutine(StartNextWave());
+        StartNextWave();
     }
 
-    IEnumerator StartNextWave()
+    void StartNextWave()
     {
-        while (currentWave < totalWaves)
+        if(currentWave < waveCount)
         {
-            yield return SpawnEnemies();
-            yield return new WaitUntil(() => activeEnemies.Count == 0); // 全部倒されるまで待つ
             currentWave++;
+            totalEnemiesInWave = Random.Range(2, 4);   // 各ウェーブ2～3体の敵をランダムで生成
+            SpawnEnemies();
         }
-
-        Debug.Log("Battle Finished!");
-    }
-
-    IEnumerator SpawnEnemies()
-    {
-        int enemyCount = Random.Range(2, 4); // 2~3体生成
-        for (int i = 0; i < enemyCount; i++)
+        else
         {
-            GameObject enemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)]; // ランダムな敵
-            GameObject enemy = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
-            activeEnemies.Add(enemy);
-            StartCoroutine(MoveEnemy(enemy));
-            yield return new WaitForSeconds(0.5f); // 0.5秒ごとに生成
+            Debug.Log("Battle Finished!");
         }
     }
 
-    IEnumerator MoveEnemy(GameObject enemy)
+    void SpawnEnemies() // 敵の生成処理
     {
-        float moveTime = 2.0f;
-        float elapsedTime = 0f;
-        Vector3 startPos = enemy.transform.position;
-        Vector3 endPos = targetPoint.position;
-
-        while (elapsedTime < moveTime)
+        for(int i =0; i < totalEnemiesInWave; i++)
         {
-            enemy.transform.position = Vector3.Lerp(startPos, endPos, elapsedTime / moveTime);
-            elapsedTime += Time.deltaTime;
+            GameObject enemy = Instantiate(GetRandomEnemy(), spawnPoint.position, Quaternion.identity);
+            Vector3 offset = spawnOffsets[i];
+            Vector3 targetPoint = spawnPoint.position + offset;
+
+            StartCoroutine(MoveEnemyToPosition(enemy, targetPoint));
+        }
+    }
+
+    GameObject GetRandomEnemy()
+    {
+        int randdomIndex = Random.Range(0, enemyPrefab.Length);
+        return enemyPrefab[randdomIndex];
+    }
+
+    System.Collections.IEnumerator MoveEnemyToPosition(GameObject enemy, Vector3 targetPoint)
+    {
+        float journeyLength = Vector3.Distance(enemy.transform.position, targetPoint);
+        float startTime = Time.time;
+
+        while(Vector3.Distance(enemy.transform.position,targetPoint)>0.1f)
+        {
+            float distanceCoverd = (Time.time - startTime) * moveSpeed;
+            float fractionOfJourney = distanceCoverd / journeyLength;
+            enemy.transform.position = Vector3.Lerp(enemy.transform.position, targetPoint, fractionOfJourney);
             yield return null;
         }
-        enemy.transform.position = endPos;
+
+        Debug.Log("Enemy reached target!");
     }
 
-    public void RemoveEnemy(GameObject enemy)
+    public void OnEnemyDestroyed()
     {
-        activeEnemies.Remove(enemy);
-        Destroy(enemy);
+        totalEnemiesInWave--;
+        if(totalEnemiesInWave <= 0)
+        {
+            StartNextWave();
+        }
     }
 }
