@@ -46,5 +46,13 @@ public class CommandContlloer : MonoBehaviour
             transform.position = initialPosition; // Œ³‚ÌˆÊ’u‚É–ß‚·
         }
     }
+    void OnDestroy()
+    {
+        CommandGenerator generator = FindObjectOfType<CommandGenerator>();
+        if (generator != null)
+        {
+            generator.OnCommandDestroyed(gameObject);
+        }
+    }
 }
 
