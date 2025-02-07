@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -7415929884612074984}
   - component: {fileID: -5187874170159401254}
   - component: {fileID: -446670166936296527}
+  - component: {fileID: 3462658503317283219}
   m_Layer: 0
   m_Name: Circle
   m_TagString: com
@@ -161,3 +162,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!225 &3462658503317283219
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2298763676206999261}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
