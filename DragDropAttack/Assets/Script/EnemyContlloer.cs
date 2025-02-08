@@ -26,6 +26,21 @@ public class EnemyContlloer : MonoBehaviour
         }
     }
 
+    public void TakeDamage(int damage)
+    {
+        currentHP -= damage;
+        Debug.Log($"{enemyData.enemyName} ‚Í {damage} ƒ_ƒ[ƒW‚ğó‚¯‚½");
+        if(currentHP <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Debug.Log("€–S");
+        Destroy(gameObject);
+    }
 
 
     void Update()
