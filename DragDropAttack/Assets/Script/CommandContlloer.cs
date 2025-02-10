@@ -11,6 +11,7 @@ public class CommandContlloer : MonoBehaviour
 
     public CommandData commandData;
     private int Attack;
+    private float AttackTime;
     void Start()
     {
         mainCamera = Camera.main;
@@ -19,6 +20,7 @@ public class CommandContlloer : MonoBehaviour
         if(commandData != null )
         {
             Attack = commandData.jissuu;
+            AttackTime = commandData.Time;
         }
         else
         {
@@ -53,7 +55,7 @@ public class CommandContlloer : MonoBehaviour
             EnemyContlloer enemy = hitCollider.GetComponent<EnemyContlloer>();
             if (enemy != null)
             {
-                enemy.TakeDamage(Attack); // EnemyContlloer‚ÌTakeDamage‚É‘ã“ü
+                enemy.TakeDamage(Attack,AttackTime); // EnemyContlloer‚ÌTakeDamage‚É‘ã“ü
             }
             Destroy(gameObject); // Ž©•ª‚ð”j‰ó
         }

@@ -7,5 +7,6 @@ public class CommandData : ScriptableObject
 {
     public string CommandName;  // ƒRƒ}ƒ“ƒh–¼
     public int jissuu;          // Œø‰Ê
+    public float Time;            // UŒ‚”­¶ŠÔ
 
 }

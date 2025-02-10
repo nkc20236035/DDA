@@ -28,14 +28,21 @@ public class EnemyContlloer : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage,float time)
     {
-        currentHP -= damage;
-        Debug.Log($"{enemyData.enemyName} は {damage} ダメージを受けた");
-        if(currentHP <= 0)
+        Debug.Log(time);
+        time -= Time.deltaTime;
+        if (time <= 0)
         {
-            Die();
+            currentHP -= damage;
+            Debug.Log($"{enemyData.enemyName} は {damage} ダメージを受けた");
+            if(currentHP <= 0)
+            {
+                Die();
+            }
         }
+
+        
     }
 
     void Die()

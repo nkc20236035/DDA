@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: tutuku
   m_EditorClassIdentifier: 
   CommandName: "\u3064\u3064\u304F"
-  jissuu: 50
+  jissuu: 10
+  Time: 0.5

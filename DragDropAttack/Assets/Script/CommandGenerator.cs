@@ -7,7 +7,7 @@ public class CommandGenerator : MonoBehaviour
     public GameObject[] commandPrefabs;   // コマンドプレハブいれるとこ
     public Transform spawnArea;
     public int commandCount = 3;          // 表示する最大コマンド数
-    public float spacing = 2f;
+    public float spacing = 3f;
     
     private List<GameObject> activeCommands = new List<GameObject>();
 

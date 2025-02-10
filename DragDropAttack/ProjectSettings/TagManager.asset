@@ -43,3 +43,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: EnemyLayer
+    uniqueID: 1406618279
+    locked: 0
+  - name: CommandLayer
+    uniqueID: 717141595
+    locked: 0
+  - name: CanvasLayer
+    uniqueID: 832726653
+    locked: 0
