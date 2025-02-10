@@ -9,10 +9,21 @@ public class CommandContlloer : MonoBehaviour
     private bool isDragging = false; // ドラッグ中かどうか
     private Camera mainCamera; // カメラ参照
 
+    public CommandData commandData;
+    private int Attack;
     void Start()
     {
         mainCamera = Camera.main;
         initialPosition = transform.position; // 初期位置を記録
+
+        if(commandData != null )
+        {
+            Attack = commandData.jissuu;
+        }
+        else
+        {
+            Debug.LogError("CommandDataなし");
+        }
     }
 
     void OnMouseDown()
@@ -39,6 +50,11 @@ public class CommandContlloer : MonoBehaviour
         Collider2D hitCollider = Physics2D.OverlapBox(transform.position, GetComponent<Collider2D>().bounds.size, 0);
         if (hitCollider != null && hitCollider.CompareTag("Enemy"))
         {
+            EnemyContlloer enemy = hitCollider.GetComponent<EnemyContlloer>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(Attack); // EnemyContlloerのTakeDamageに代入
+            }
             Destroy(gameObject); // 自分を破壊
         }
         else

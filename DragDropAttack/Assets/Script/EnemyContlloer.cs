@@ -11,9 +11,11 @@ public class EnemyContlloer : MonoBehaviour
 
     private int currentHP;
     private int currentAttack;
+    EnemyGenerator EnemyGene;
 
     void Start()
     {
+        EnemyGene = GameObject.Find("EnemyGene").GetComponent<EnemyGenerator>();
 
         if (enemyData != null)
         {
@@ -39,6 +41,7 @@ public class EnemyContlloer : MonoBehaviour
     void Die()
     {
         Debug.Log("€–S");
+        EnemyGene.OnEnemyDestroyed(); // EnemyGenerator‚ÌOnEnemyDestroyedƒNƒ‰ƒX‚ğŒÄ‚Ño‚·
         Destroy(gameObject);
     }
 

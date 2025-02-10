@@ -9,10 +9,22 @@ public class PlayerCommandContlloer : MonoBehaviour
     private bool isDragging = false; // ドラッグ中かどうか
     private Camera mainCamera; // カメラ参照
 
+    public CommandData commandData;
+    private int Baffer;
+
     void Start()
     {
         mainCamera = Camera.main;
         initialPosition = transform.position; // 初期位置を記録
+
+        if(commandData != null)
+        {
+            Baffer = commandData.jissuu;
+        }
+        else
+        {
+            Debug.LogError("PlayerCommandDataなし");
+        }
     }
 
     void OnMouseDown()
