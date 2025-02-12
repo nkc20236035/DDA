@@ -55,7 +55,8 @@ public class CommandContlloer : MonoBehaviour
             EnemyContlloer enemy = hitCollider.GetComponent<EnemyContlloer>();
             if (enemy != null)
             {
-                enemy.TakeDamage(Attack,AttackTime); // EnemyContlloer‚ÌTakeDamage‚É‘ã“ü
+                Debug.Log("“GŒŸ’m");
+                enemy.SetAttack(Attack,AttackTime); // EnemyContlloer‚ÌTakeDamage‚É‘ã“ü
             }
             Destroy(gameObject); // Ž©•ª‚ð”j‰ó
         }

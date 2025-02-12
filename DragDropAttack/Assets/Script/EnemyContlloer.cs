@@ -12,6 +12,8 @@ public class EnemyContlloer : MonoBehaviour
     private int currentHP;
     private int currentAttack;
     EnemyGenerator EnemyGene;
+    private int Damage = 0;
+    private float Timer = 0f;
 
     void Start()
     {
@@ -28,18 +30,34 @@ public class EnemyContlloer : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage,float time)
+    void Update()
     {
-        Debug.Log(time);
-        time -= Time.deltaTime;
-        if (time <= 0)
+        if (Timer > 0)
         {
-            currentHP -= damage;
-            Debug.Log($"{enemyData.enemyName} は {damage} ダメージを受けた");
-            if(currentHP <= 0)
+            Timer -= Time.deltaTime;
+
+            if(Timer <= 0 && Damage > 0)
             {
-                Die();
+                TakeDamage(Damage);
+                Damage = 0;
             }
+        }
+    }
+
+    public void SetAttack(int damage,float time)
+    {
+        Damage = damage;
+        Timer = time;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        
+         currentHP -= damage;
+         Debug.Log($"{enemyData.enemyName} は {damage} ダメージを受けた");
+        if (currentHP <= 0)
+        {
+            Die();
         }
 
         
@@ -53,8 +71,5 @@ public class EnemyContlloer : MonoBehaviour
     }
 
 
-    void Update()
-    {
-        
-    }
+    
 }
