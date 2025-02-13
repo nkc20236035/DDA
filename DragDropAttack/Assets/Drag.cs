@@ -3,40 +3,60 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
-    private Vector3 startPosition;  // 最初の位置を覚えておく
+    private Vector2 prevPos; //保存しておく初期position
+    private RectTransform rectTransform; // 移動したいオブジェクトのRectTransform
+    private RectTransform parentRectTransform; // 移動したいオブジェクトの親(Panel)のRectTransform
+    public RectTransform dropTarget; // ドロップ先の枠
 
+    private void Awake()
+    {
+        rectTransform = GetComponent<RectTransform>();
+        parentRectTransform = rectTransform.parent as RectTransform;
+    }
+
+    // ドラッグ開始時の処理
     public void OnBeginDrag(PointerEventData eventData)
     {
-        startPosition = transform.position;  // ドラッグ開始時の位置を記録
+        // ドラッグ前の位置を記憶
+        prevPos = rectTransform.anchoredPosition;
     }
 
+    // ドラッグ中の処理
     public void OnDrag(PointerEventData eventData)
     {
-        transform.position = Input.mousePosition;  // マウスに合わせて動く
+        Vector2 localPosition = GetLocalPosition(eventData.position);
+        rectTransform.anchoredPosition = localPosition;
     }
 
+    // ドラッグ終了時の処理
     public void OnEndDrag(PointerEventData eventData)
     {
-        // 敵にドロップされたかどうかを確認
-        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-
-        if (hit.collider != null && hit.collider.CompareTag("Enemy"))
+        if (IsPointerOverTarget(eventData))
         {
-            ActivateCommand(hit.collider.gameObject);  // コマンド発動
-            Destroy(gameObject);  // コマンドは発動後消える
+            // 枠内にドロップされた場合、枠の中央にスナップ
+            rectTransform.anchoredPosition = dropTarget.anchoredPosition;
         }
         else
         {
-            transform.position = startPosition;  // 敵じゃない場所なら元に戻る
+            // 枠外の場合、元の位置に戻す
+            rectTransform.anchoredPosition = prevPos;
         }
     }
 
-    void ActivateCommand(GameObject enemy)
+    // ScreenPositionからlocalPositionへの変換関数
+    private Vector2 GetLocalPosition(Vector2 screenPosition)
     {
-        Debug.Log("コマンド発動！ " + enemy.name);
-        // ここに「単体攻撃」や「防御」の効果を入れる
+        Vector2 result = Vector2.zero;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(parentRectTransform, screenPosition, Camera.main, out result);
+        return result;
+    }
+
+    // ドロップ先の枠内にポインタがあるか判定
+    private bool IsPointerOverTarget(PointerEventData eventData)
+    {
+        return RectTransformUtility.RectangleContainsScreenPoint(dropTarget, eventData.position, Camera.main);
     }
 
 }
