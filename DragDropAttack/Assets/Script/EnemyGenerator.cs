@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyGenerator : MonoBehaviour
 {
@@ -9,15 +10,16 @@ public class EnemyGenerator : MonoBehaviour
     public int waveCount = 5;        // バトルのウェーブ数
     public float spawnDelay = 0.5f;  // 敵の出現遅延
     public float moveSpeed = 5f;     // 敵の移動速度
+    public Text text;
 
     private int currentWave = 0;     // 現在のウェーブ
     private int totalEnemiesInWave = 0;  // 1ウェーブの敵の数
 
     private Vector3[] spawnOffsets =
     {
-        new Vector3(-2f,1f,0f),
-        new Vector3(0f,2f,0f),
-        new Vector3(2f,3f,0f),
+        new Vector3(4f,-1f,0f),
+        new Vector3(6f,0f,0f),
+        new Vector3(8f,1f,0f),
     };
 
     void Start()
@@ -30,6 +32,7 @@ public class EnemyGenerator : MonoBehaviour
         if(currentWave < waveCount)
         {
             currentWave++;
+            text.text = "Wave " + currentWave +"/5";
             totalEnemiesInWave = Random.Range(2, 4);   // 各ウェーブ2～3体の敵をランダムで生成
             SpawnEnemies();
         }

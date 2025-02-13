@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28a6e9d418ae2fb42b7605c112b58b41, type: 3}
-  m_Name: Naguru
+  m_Name: Tukitobasu
   m_EditorClassIdentifier: 
-  CommandName: Naguru
-  jissuu: 30
-  Time: 1.5
+  CommandName: "\u3064\u304D\u3068\u3070\u3059"
+  jissuu: 50
+  Time: 2.6

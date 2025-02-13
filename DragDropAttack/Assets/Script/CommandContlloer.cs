@@ -49,7 +49,7 @@ public class CommandContlloer : MonoBehaviour
         isDragging = false;
 
         // Enemyタグのオブジェクトと重なっているか判定
-        Collider2D hitCollider = Physics2D.OverlapBox(transform.position, GetComponent<Collider2D>().bounds.size, 0);
+        Collider2D hitCollider = Physics2D.OverlapBox(transform.position, GetComponent<Collider2D>().bounds.size, 0,LayerMask.GetMask("Enemy"));
         if (hitCollider != null && hitCollider.CompareTag("Enemy"))
         {
             EnemyContlloer enemy = hitCollider.GetComponent<EnemyContlloer>();
