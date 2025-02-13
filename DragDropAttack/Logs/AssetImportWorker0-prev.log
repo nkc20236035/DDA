@@ -24,7 +24,11 @@ C:/Github/DDA/DragDropAttack
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
+<<<<<<< HEAD
 52590
+=======
+64561
+>>>>>>> origin/main
 Successfully changed project path to: C:/Github/DDA/DragDropAttack
 C:/Github/DDA/DragDropAttack
 >>>>>>> origin/main
@@ -58,6 +62,7 @@ C:/Github/DDA/DragDropAttack
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
 <<<<<<< HEAD
+<<<<<<< HEAD
 Player connection [18468]  Target information:
 
 Player connection [18468]  * "[IP] 10.18.13.106 [Port] 0 [Flags] 2 [Guid] 3953912532 [EditorId] 3953912532 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-MH3M7B4) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
@@ -76,6 +81,13 @@ Player connection [7340] Host "[IP] 10.18.13.93 [Port] 0 [Flags] 2 [Guid] 259832
 Player connection [7340] Host "[IP] 10.18.13.93 [Port] 0 [Flags] 2 [Guid] 2598326643 [EditorId] 2598326643 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-MH3M7B4) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 Refreshing native plugins compatible for Editor in 16.51 ms, found 4 plugins.
+=======
+Player connection [17616] Host "[IP] 10.18.13.93 [Port] 0 [Flags] 2 [Guid] 2693292975 [EditorId] 2693292975 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-MH3M7B4) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [17616] Host "[IP] 10.18.13.93 [Port] 0 [Flags] 2 [Guid] 2693292975 [EditorId] 2693292975 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-MH3M7B4) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+Refreshing native plugins compatible for Editor in 18.26 ms, found 4 plugins.
+>>>>>>> origin/main
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.2.13f1 (5f5de2657605)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.2.13f1/Editor/Data/Resources/UnitySubsystems
@@ -103,11 +115,16 @@ Registered in 0.006685 seconds.
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.2.13f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.2.13f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.2.13f1/Editor/Data/MonoBleedingEdge/etc'
+<<<<<<< HEAD
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56060
+=======
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56928
+>>>>>>> origin/main
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.2.13f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.2.13f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+<<<<<<< HEAD
 Registered in 0.008956 seconds.
 - Loaded All Assemblies, in  0.448 seconds
 >>>>>>> origin/main
@@ -155,6 +172,18 @@ Domain Reload Profiling: 600ms
 Domain Reload Profiling:
 	ReloadAssembly (251ms)
 		BeginReloadAssembly (120ms)
+=======
+Registered in 0.010964 seconds.
+- Loaded All Assemblies, in  0.470 seconds
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 362 ms
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.730 seconds
+Domain Reload Profiling:
+	ReloadAssembly (260ms)
+		BeginReloadAssembly (122ms)
+>>>>>>> origin/main
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
@@ -163,13 +192,20 @@ Domain Reload Profiling:
 		LoadAllAssembliesAndSetupDomain (0ms)
 			LoadAssemblies (118ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
+<<<<<<< HEAD
 			SetupTypeCache (187ms)
 				TypeCache.Initialize (185ms)
 					TypeCache.ScanAssembly (183ms)
+=======
+			SetupTypeCache (199ms)
+				TypeCache.Initialize (198ms)
+					TypeCache.ScanAssembly (196ms)
+>>>>>>> origin/main
 				ResolveRequiredComponents (1ms)
 		FinalizeReload (0ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (0ms)
+<<<<<<< HEAD
 			SetupLoadedEditorAssemblies (724ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (474ms)
@@ -178,6 +214,16 @@ Domain Reload Profiling:
 				BeforeProcessingInitializeOnLoad (2ms)
 				ProcessInitializeOnLoadAttributes (158ms)
 				ProcessInitializeOnLoadMethodAttributes (85ms)
+=======
+			SetupLoadedEditorAssemblies (665ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (445ms)
+				SetLoadedEditorAssemblies (6ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (147ms)
+				ProcessInitializeOnLoadMethodAttributes (66ms)
+>>>>>>> origin/main
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -191,6 +237,7 @@ Begin MonoManager ReloadAssembly
 =======
 Symbol file LoadedFromMemory doesn't match image C:\Github\DDA\DragDropAttack\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Github\DDA\DragDropAttack\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+<<<<<<< HEAD
 - Loaded All Assemblies, in  0.902 seconds
 Refreshing native plugins compatible for Editor in 6.29 ms, found 4 plugins.
 >>>>>>> origin/main
@@ -244,10 +291,22 @@ Total: 2.879600 ms (FindLiveObjects: 0.289900 ms CreateObjectMapping: 0.108400 m
 Domain Reload Profiling:
 	ReloadAssembly (240ms)
 		BeginReloadAssembly (136ms)
+=======
+- Loaded All Assemblies, in  0.938 seconds
+Refreshing native plugins compatible for Editor in 4.94 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.574 seconds
+Domain Reload Profiling:
+	ReloadAssembly (286ms)
+		BeginReloadAssembly (166ms)
+>>>>>>> origin/main
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
+<<<<<<< HEAD
 			CreateAndSetChildDomain (22ms)
 		LoadAllAssembliesAndSetupDomain (656ms)
 			LoadAssemblies (400ms)
@@ -278,6 +337,38 @@ Unloading 3954 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 61 unused Assets / (70.4 KB). Loaded Objects now: 4418.
 Memory consumption went from 132.9 MB to 132.8 MB.
 Total: 110.856800 ms (FindLiveObjects: 0.328700 ms CreateObjectMapping: 0.152600 ms MarkObjects: 109.765700 ms  DeleteObjects: 0.607800 ms)
+=======
+			CreateAndSetChildDomain (34ms)
+		LoadAllAssembliesAndSetupDomain (648ms)
+			LoadAssemblies (422ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (313ms)
+				TypeCache.Initialize (285ms)
+					TypeCache.ScanAssembly (281ms)
+				ResolveRequiredComponents (3ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (421ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (20ms)
+				SetLoadedEditorAssemblies (5ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (98ms)
+				ProcessInitializeOnLoadAttributes (257ms)
+				ProcessInitializeOnLoadMethodAttributes (34ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 5.16 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3954 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 61 unused Assets / (70.4 KB). Loaded Objects now: 4418.
+Memory consumption went from 133.0 MB to 132.9 MB.
+Total: 4.514400 ms (FindLiveObjects: 0.321200 ms CreateObjectMapping: 0.141400 ms MarkObjects: 3.842700 ms  DeleteObjects: 0.207300 ms)
+>>>>>>> origin/main
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -292,10 +383,19 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
+Received Import Request.
+  Time since last request: 19586.346799 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36386ea39f35675376847e22a03cb610') in 0.002110 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Github\DDA\DragDropAttack\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Github\DDA\DragDropAttack\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+<<<<<<< HEAD
 - Loaded All Assemblies, in  1.044 seconds
 Refreshing native plugins compatible for Editor in 6.27 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
@@ -305,10 +405,22 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling:
 	ReloadAssembly (318ms)
 		BeginReloadAssembly (228ms)
+=======
+- Loaded All Assemblies, in  0.733 seconds
+Refreshing native plugins compatible for Editor in 4.37 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.192 seconds
+Domain Reload Profiling:
+	ReloadAssembly (222ms)
+		BeginReloadAssembly (145ms)
+>>>>>>> origin/main
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (9ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
+<<<<<<< HEAD
 			CreateAndSetChildDomain (59ms)
 		LoadAllAssembliesAndSetupDomain (719ms)
 			LoadAssemblies (459ms)
@@ -317,11 +429,22 @@ Domain Reload Profiling:
 				TypeCache.Initialize (335ms)
 					TypeCache.ScanAssembly (326ms)
 				ResolveRequiredComponents (8ms)
+=======
+			CreateAndSetChildDomain (41ms)
+		LoadAllAssembliesAndSetupDomain (508ms)
+			LoadAssemblies (293ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (278ms)
+				TypeCache.Initialize (272ms)
+					TypeCache.ScanAssembly (266ms)
+				ResolveRequiredComponents (6ms)
+>>>>>>> origin/main
 		FinalizeReload (0ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (490ms)
+			SetupLoadedEditorAssemblies (574ms)
 				LogAssemblyErrors (0ms)
+<<<<<<< HEAD
 				InitializePlatformSupportModulesInManaged (28ms)
 				SetLoadedEditorAssemblies (8ms)
 				RefreshPlugins (0ms)
@@ -338,6 +461,24 @@ Unloading 3942 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 36 unused Assets / (42.6 KB). Loaded Objects now: 4420.
 Memory consumption went from 130.2 MB to 130.1 MB.
 Total: 3.466700 ms (FindLiveObjects: 0.406000 ms CreateObjectMapping: 0.127100 ms MarkObjects: 2.829600 ms  DeleteObjects: 0.102500 ms)
+=======
+				InitializePlatformSupportModulesInManaged (30ms)
+				SetLoadedEditorAssemblies (9ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (152ms)
+				ProcessInitializeOnLoadAttributes (329ms)
+				ProcessInitializeOnLoadMethodAttributes (43ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (14ms)
+Refreshing native plugins compatible for Editor in 8.23 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3942 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 35 unused Assets / (34.7 KB). Loaded Objects now: 4421.
+Memory consumption went from 130.0 MB to 130.0 MB.
+Total: 5.991900 ms (FindLiveObjects: 0.593700 ms CreateObjectMapping: 0.426100 ms MarkObjects: 4.872800 ms  DeleteObjects: 0.097600 ms)
+>>>>>>> origin/main
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -357,6 +498,7 @@ Received Prepare
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Github\DDA\DragDropAttack\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Github\DDA\DragDropAttack\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+<<<<<<< HEAD
 - Loaded All Assemblies, in  0.821 seconds
 Refreshing native plugins compatible for Editor in 7.00 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
@@ -427,10 +569,22 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling:
 	ReloadAssembly (353ms)
 		BeginReloadAssembly (243ms)
+=======
+- Loaded All Assemblies, in  0.715 seconds
+Refreshing native plugins compatible for Editor in 4.71 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.872 seconds
+Domain Reload Profiling:
+	ReloadAssembly (215ms)
+		BeginReloadAssembly (144ms)
+>>>>>>> origin/main
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
+<<<<<<< HEAD
 			CreateAndSetChildDomain (78ms)
 		LoadAllAssembliesAndSetupDomain (530ms)
 			LoadAssemblies (390ms)
@@ -460,6 +614,37 @@ Unloading 3943 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 35 unused Assets / (42.1 KB). Loaded Objects now: 4427.
 Memory consumption went from 130.2 MB to 130.2 MB.
 Total: 2.780100 ms (FindLiveObjects: 0.272400 ms CreateObjectMapping: 0.104700 ms MarkObjects: 2.341700 ms  DeleteObjects: 0.060100 ms)
+=======
+			CreateAndSetChildDomain (42ms)
+		LoadAllAssembliesAndSetupDomain (497ms)
+			LoadAssemblies (289ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (263ms)
+				TypeCache.Initialize (256ms)
+					TypeCache.ScanAssembly (249ms)
+				ResolveRequiredComponents (4ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (356ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (20ms)
+				SetLoadedEditorAssemblies (6ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (95ms)
+				ProcessInitializeOnLoadAttributes (202ms)
+				ProcessInitializeOnLoadMethodAttributes (26ms)
+				AfterProcessingInitializeOnLoad (7ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
+Refreshing native plugins compatible for Editor in 4.40 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3943 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 35 unused Assets / (42.0 KB). Loaded Objects now: 4424.
+Memory consumption went from 130.3 MB to 130.2 MB.
+Total: 2.718000 ms (FindLiveObjects: 0.270700 ms CreateObjectMapping: 0.102000 ms MarkObjects: 2.257700 ms  DeleteObjects: 0.086700 ms)
+>>>>>>> origin/main
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -479,6 +664,7 @@ Received Prepare
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Github\DDA\DragDropAttack\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Github\DDA\DragDropAttack\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+<<<<<<< HEAD
 - Loaded All Assemblies, in  0.768 seconds
 Refreshing native plugins compatible for Editor in 6.95 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
@@ -488,10 +674,22 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling:
 	ReloadAssembly (220ms)
 		BeginReloadAssembly (145ms)
+=======
+- Loaded All Assemblies, in  1.034 seconds
+Refreshing native plugins compatible for Editor in 6.87 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.312 seconds
+Domain Reload Profiling:
+	ReloadAssembly (303ms)
+		BeginReloadAssembly (201ms)
+>>>>>>> origin/main
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
+<<<<<<< HEAD
 			CreateAndSetChildDomain (42ms)
 		LoadAllAssembliesAndSetupDomain (546ms)
 			LoadAssemblies (324ms)
@@ -1041,6 +1239,37 @@ Unloading 3944 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 35 unused Assets / (42.0 KB). Loaded Objects now: 4455.
 Memory consumption went from 130.3 MB to 130.2 MB.
 Total: 5.240600 ms (FindLiveObjects: 0.337600 ms CreateObjectMapping: 0.140500 ms MarkObjects: 4.678400 ms  DeleteObjects: 0.082700 ms)
+=======
+			CreateAndSetChildDomain (55ms)
+		LoadAllAssembliesAndSetupDomain (724ms)
+			LoadAssemblies (426ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (383ms)
+				TypeCache.Initialize (375ms)
+					TypeCache.ScanAssembly (366ms)
+				ResolveRequiredComponents (8ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (533ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (30ms)
+				SetLoadedEditorAssemblies (8ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (151ms)
+				ProcessInitializeOnLoadAttributes (297ms)
+				ProcessInitializeOnLoadMethodAttributes (38ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Refreshing native plugins compatible for Editor in 4.25 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3943 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 35 unused Assets / (42.0 KB). Loaded Objects now: 4427.
+Memory consumption went from 130.3 MB to 130.2 MB.
+Total: 3.086100 ms (FindLiveObjects: 0.421300 ms CreateObjectMapping: 0.334600 ms MarkObjects: 2.237700 ms  DeleteObjects: 0.090900 ms)
+>>>>>>> origin/main
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -1060,6 +1289,7 @@ Received Prepare
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Github\DDA\DragDropAttack\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Github\DDA\DragDropAttack\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+<<<<<<< HEAD
 - Loaded All Assemblies, in  0.779 seconds
 Refreshing native plugins compatible for Editor in 5.73 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
@@ -1080,10 +1310,33 @@ Domain Reload Profiling:
 			SetupTypeCache (293ms)
 				TypeCache.Initialize (286ms)
 					TypeCache.ScanAssembly (278ms)
+=======
+- Loaded All Assemblies, in  0.740 seconds
+Refreshing native plugins compatible for Editor in 5.42 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.130 seconds
+Domain Reload Profiling:
+	ReloadAssembly (241ms)
+		BeginReloadAssembly (163ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (47ms)
+		LoadAllAssembliesAndSetupDomain (495ms)
+			LoadAssemblies (310ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (258ms)
+				TypeCache.Initialize (254ms)
+					TypeCache.ScanAssembly (246ms)
+>>>>>>> origin/main
 				ResolveRequiredComponents (4ms)
 		FinalizeReload (0ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (0ms)
+<<<<<<< HEAD
 			SetupLoadedEditorAssemblies (417ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (21ms)
@@ -1485,6 +1738,26 @@ Unloading 3942 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 35 unused Assets / (34.7 KB). Loaded Objects now: 4475.
 Memory consumption went from 130.0 MB to 130.0 MB.
 Total: 3.502600 ms (FindLiveObjects: 0.408600 ms CreateObjectMapping: 0.299600 ms MarkObjects: 2.719500 ms  DeleteObjects: 0.071300 ms)
+>>>>>>> origin/main
+=======
+			SetupLoadedEditorAssemblies (510ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (29ms)
+				SetLoadedEditorAssemblies (8ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (140ms)
+				ProcessInitializeOnLoadAttributes (283ms)
+				ProcessInitializeOnLoadMethodAttributes (40ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
+Refreshing native plugins compatible for Editor in 6.88 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3943 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 35 unused Assets / (41.9 KB). Loaded Objects now: 4430.
+Memory consumption went from 130.3 MB to 130.2 MB.
+Total: 3.805000 ms (FindLiveObjects: 0.384700 ms CreateObjectMapping: 0.577800 ms MarkObjects: 2.766800 ms  DeleteObjects: 0.074600 ms)
 >>>>>>> origin/main
 
 AssetImportParameters requested are different than current active one (requested -> active):
