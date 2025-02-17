@@ -8,12 +8,15 @@ public class StageManager : MonoBehaviour
     private float timer = 0;
     public GameObject EnemyGene;
     public GameObject CommandGene;
+    public bool Commandflag;
     //public Text text;
     public Image image1;
     public Image image2;
     private bool isFading = true;
     private float alpha = 0f;
     private float fedeSpeed = 1.0f;
+    private float commandTime;
+
 
     void Start()
     {
@@ -25,6 +28,8 @@ public class StageManager : MonoBehaviour
         Color color2 = image2.color;
         color2.a = 0f;
         image2.color = color2;
+        Commandflag = true;
+        commandTime = 0;
     }
 
     void Update()
@@ -65,5 +70,19 @@ public class StageManager : MonoBehaviour
             //text.text = "ƒoƒgƒ‹";
         }
 
+        if (commandTime > 0)
+        {
+            commandTime -= Time.deltaTime;
+
+            if (commandTime < 0)
+            {
+                Commandflag = true;
+            }
+        }
+
+    }
+    public void getTime(float t)
+    {
+        commandTime = t;
     }
 }

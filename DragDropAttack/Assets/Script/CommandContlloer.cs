@@ -8,6 +8,7 @@ public class CommandContlloer : MonoBehaviour
     private Vector3 initialPosition; // ドラッグ前の座標
     private bool isDragging = false; // ドラッグ中かどうか
     private Camera mainCamera; // カメラ参照
+    StageManager stageManager;
 
     public CommandData commandData;
     private int Attack;
@@ -16,6 +17,7 @@ public class CommandContlloer : MonoBehaviour
     {
         mainCamera = Camera.main;
         initialPosition = transform.position; // 初期位置を記録
+        stageManager = GameObject.Find("StageManager").GetComponent<StageManager>();
 
         if(commandData != null )
         {
@@ -53,12 +55,19 @@ public class CommandContlloer : MonoBehaviour
         if (hitCollider != null && hitCollider.CompareTag("Enemy"))
         {
             EnemyContlloer enemy = hitCollider.GetComponent<EnemyContlloer>();
-            if (enemy != null)
+            if (enemy != null && stageManager.Commandflag == true)
             {
                 Debug.Log("敵検知");
                 enemy.SetAttack(Attack,AttackTime); // EnemyContlloerのTakeDamageに代入
+                stageManager.getTime(AttackTime);
+                stageManager.Commandflag = false;
+                Destroy(gameObject); // 自分を破壊
             }
-            Destroy(gameObject); // 自分を破壊
+            else
+            {
+                transform.position = initialPosition; // 元の位置に戻す
+            }
+            
         }
         else
         {
