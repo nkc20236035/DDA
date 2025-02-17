@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
+using UnityEngine.UI;
 
 public class EnemyContlloer : MonoBehaviour
 {
     public EnemyData enemyData;
+    public Text timertext;
 
     private int currentHP;
     private int currentAttack;
@@ -49,6 +50,7 @@ public class EnemyContlloer : MonoBehaviour
 
         if(currentAttackTime >0)
         {
+            timertext.text = currentAttackTime.ToString("0");
             currentAttackTime -= Time.deltaTime;
             if(currentAttackTime < 0)
             {

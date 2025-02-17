@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28a6e9d418ae2fb42b7605c112b58b41, type: 3}
-  m_Name: Herling
+  m_Name: Healing
   m_EditorClassIdentifier: 
   CommandName: "\u304B\u3044\u3075\u304F"
-  jissuu: 20
+  jissuu: 50
   Time: 0

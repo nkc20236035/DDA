@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5301913751958643174}
   m_Layer: 0
   m_Name: Tatakiotosu
-  m_TagString: Untagged
+  m_TagString: Command
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

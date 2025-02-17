@@ -74,6 +74,12 @@ public class CommandContlloer : MonoBehaviour
             transform.position = initialPosition; // Œ³‚ÌˆÊ’u‚É–ß‚·
         }
     }
+
+    public void commandReset()
+    {
+        Destroy(gameObject);
+    }
+
     void OnDestroy()
     {
         CommandGenerator generator = FindObjectOfType<CommandGenerator>();

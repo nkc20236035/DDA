@@ -48,16 +48,25 @@ public class PlayerCommandContlloer : MonoBehaviour
         isDragging = false;
 
         // Enemyタグのオブジェクトと重なっているか判定
-        Collider2D hitCollider = Physics2D.OverlapBox(transform.position, GetComponent<Collider2D>().bounds.size, 0);
+        Collider2D hitCollider = Physics2D.OverlapBox(transform.position, GetComponent<Collider2D>().bounds.size, 0, LayerMask.GetMask("Player"));
         if (hitCollider != null && hitCollider.CompareTag("Player"))
         {
+            SimplePlayerController Player = hitCollider.GetComponent<SimplePlayerController>();
+            Player.getHeal(Baffer);
             Destroy(gameObject); // 自分を破壊
+
         }
         else
         {
             transform.position = initialPosition; // 元の位置に戻す
         }
     }
+
+    public void CommandReset()
+    {
+        Destroy(gameObject);
+    }
+
     void OnDestroy()
     {
         CommandGenerator generator = FindObjectOfType<CommandGenerator>();

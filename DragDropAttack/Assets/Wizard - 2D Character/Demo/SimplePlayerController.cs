@@ -36,6 +36,12 @@ public class SimplePlayerController : MonoBehaviour
         }
     }
 
+    public void getHeal(int heal)
+    {
+        MaxHP += heal;
+        Debug.Log(MaxHP);
+    }
+
     public void Attack()
     {
         if (alive)
