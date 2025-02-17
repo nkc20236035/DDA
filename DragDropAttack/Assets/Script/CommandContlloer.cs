@@ -75,11 +75,6 @@ public class CommandContlloer : MonoBehaviour
         }
     }
 
-    public void commandReset()
-    {
-        Destroy(gameObject);
-    }
-
     void OnDestroy()
     {
         CommandGenerator generator = FindObjectOfType<CommandGenerator>();

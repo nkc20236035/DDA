@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class ReSetButton : MonoBehaviour
 {
-    public CommandContlloer commandC;
-    public PlayerCommandContlloer PcommandC;
+    public string targetTag = "Command"; // 削除したいオブジェクトのタグ
 
-    public void ClickButton()
+    public void DestroyAllWithTag()
     {
-        commandC.commandReset();
-        PcommandC.CommandReset();
+        GameObject[] objects = GameObject.FindGameObjectsWithTag(targetTag); // タグのついたオブジェクトを取得
+
+        foreach (GameObject obj in objects)
+        {
+            Destroy(obj); // オブジェクトを削除
+        }
     }
 }
