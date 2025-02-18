@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de6d1a7f5640c4f4cb6836eccfef32c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 0}
+  enemyData: {fileID: 11400000, guid: 062967198d9a60043bf372e4805de7a0, type: 2}
   timertext: {fileID: 2816873960125447173}
 --- !u!70 &-8796795403306214821
 CapsuleCollider2D:

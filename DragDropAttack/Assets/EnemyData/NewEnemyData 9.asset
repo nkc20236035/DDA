@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: NewEnemyData 9
   m_EditorClassIdentifier: 
   enemyName: 
-  maxHP: 0
-  attackPower: 0
-  attackTime: 0
+  maxHP: 60
+  attackPower: 27
+  attackTime: 7

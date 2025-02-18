@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de6d1a7f5640c4f4cb6836eccfef32c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 0}
+  enemyData: {fileID: 11400000, guid: 261bd28a44a501d43b5ff3ee01ea45b3, type: 2}
   timertext: {fileID: 7984508577000270477}
 --- !u!50 &-7401965430269957546
 Rigidbody2D:
