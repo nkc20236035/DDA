@@ -9,6 +9,7 @@ public class StageManager : MonoBehaviour
     public GameObject EnemyGene;
     public GameObject CommandGene;
     public bool Commandflag;
+    public bool isPlaying;
     //public Text text;
     public Image image1;
     public Image image2;
@@ -16,6 +17,7 @@ public class StageManager : MonoBehaviour
     private float alpha = 0f;
     private float fedeSpeed = 1.0f;
     private float commandTime;
+    SimplePlayerController playerController;
 
 
     void Start()
@@ -30,6 +32,8 @@ public class StageManager : MonoBehaviour
         image2.color = color2;
         Commandflag = true;
         commandTime = 0;
+        isPlaying = true;
+        playerController = GameObject.Find("Wizard").GetComponent<SimplePlayerController>();
     }
 
     void Update()
@@ -78,6 +82,11 @@ public class StageManager : MonoBehaviour
             {
                 Commandflag = true;
             }
+        }
+
+        if(playerController.HP <= 0)
+        {
+            isPlaying = false;
         }
 
     }

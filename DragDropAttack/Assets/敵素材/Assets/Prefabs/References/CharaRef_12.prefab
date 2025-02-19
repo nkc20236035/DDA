@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 261bd28a44a501d43b5ff3ee01ea45b3, type: 2}
   timertext: {fileID: 7984508577000270477}
+  HPSlider: {fileID: 0}
 --- !u!50 &-7401965430269957546
 Rigidbody2D:
   serializedVersion: 4
@@ -190,15 +191,15 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4956344058480516897}
-  m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -0.00049999997, y: 0.00049999997, z: 0.5}
+  m_LocalScale: {x: 0.0005, y: 0.00049999997, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4598168074272740551}
   m_Father: {fileID: 4805547246895378}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 1}

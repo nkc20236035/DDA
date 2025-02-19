@@ -53,3 +53,6 @@ TagManager:
   - name: CanvasLayer
     uniqueID: 832726653
     locked: 0
+  - name: PlayerLayer
+    uniqueID: 779306385
+    locked: 0

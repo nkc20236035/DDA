@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -9,19 +10,23 @@ public class EnemyContlloer : MonoBehaviour
 {
     public EnemyData enemyData;
     public Text timertext;
+    public Slider HPSlider;
 
     private int currentHP;
     private int currentAttack;
     private float currentAttackTime;
+    private int MaxHp;
     EnemyGenerator EnemyGene;
     private int Damage = 0;
     private float Timer = 0f;
     SimplePlayerController playercontlloer;
+    StageManager stagemanager;
 
     void Start()
     {
         EnemyGene = GameObject.Find("EnemyGene").GetComponent<EnemyGenerator>();
         playercontlloer = GameObject.Find("Wizard").GetComponent<SimplePlayerController>();
+        stagemanager = GameObject.Find ("StageManager").GetComponent<StageManager>();
 
         if (enemyData != null)
         {
@@ -33,31 +38,39 @@ public class EnemyContlloer : MonoBehaviour
         {
             Debug.LogError("EnemyData‚È‚µ");
         }
+
+
     }
 
+    
     void Update()
     {
-        if (Timer > 0)
+        if (stagemanager.isPlaying)
         {
-            Timer -= Time.deltaTime;
-
-            if(Timer <= 0 && Damage > 0)
+            if (Timer > 0)
             {
-                TakeDamage(Damage);
-                Damage = 0;
+                Timer -= Time.deltaTime;
+
+                if (Timer <= 0 && Damage > 0)
+                {
+                    TakeDamage(Damage);
+                    Damage = 0;
+                }
+            }
+
+            if (currentAttackTime > 0)
+            {
+                timertext.text = currentAttackTime.ToString("0");
+                currentAttackTime -= Time.deltaTime;
+                if (currentAttackTime < 0)
+                {
+                    playercontlloer.getDamage(currentAttack);
+                    currentAttackTime = enemyData.attackTime;
+                }
             }
         }
 
-        if(currentAttackTime >0)
-        {
-            timertext.text = currentAttackTime.ToString("0");
-            currentAttackTime -= Time.deltaTime;
-            if(currentAttackTime < 0)
-            {
-                playercontlloer.getDamage(currentAttack);
-                currentAttackTime = enemyData.attackTime;
-            }
-        }
+
     }
 
     public void SetAttack(int damage,float time)
