@@ -31,6 +31,11 @@ namespace ClearSky
             ResetAnimation();
             anim.SetTrigger("attack");
         }
+        public void Attack2()
+        {
+            ResetAnimation();
+            anim.SetTrigger("attack2");
+        }
         public void TripOver()
         {
             ResetAnimation();
