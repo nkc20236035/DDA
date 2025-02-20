@@ -11,9 +11,12 @@ public class EnemyGenerator : MonoBehaviour
     public float spawnDelay = 0.5f;  // 敵の出現遅延
     public float moveSpeed = 5f;     // 敵の移動速度
     public Text text;
+    public Image finish;
 
     private int currentWave = 0;     // 現在のウェーブ
     private int totalEnemiesInWave = 0;  // 1ウェーブの敵の数
+
+    ImageMove imagemove;
 
     private Vector3[] spawnOffsets =
     {
@@ -22,9 +25,16 @@ public class EnemyGenerator : MonoBehaviour
         new Vector3(8f,1f,0f),
     };
 
+    public float wonTimer = 0f;
+    public bool wonFlag = false;
+    
     void Start()
     {
         StartNextWave();
+        Color color = finish.color;
+        color.a = 0f;
+        finish.color = color;
+        imagemove = GameObject.Find("Won").GetComponent<ImageMove>();
     }
 
     void StartNextWave()
@@ -39,6 +49,10 @@ public class EnemyGenerator : MonoBehaviour
         else
         {
             Debug.Log("Battle Finished!");
+            Color color = finish.color;
+            color.a = 1f;
+            finish.color = color;
+            wonTimer = 3f;
         }
     }
 
@@ -76,6 +90,8 @@ public class EnemyGenerator : MonoBehaviour
         Debug.Log("Enemy reached target!");
     }
 
+
+
     public void OnEnemyDestroyed()
     {
         totalEnemiesInWave--;
@@ -84,4 +100,20 @@ public class EnemyGenerator : MonoBehaviour
             StartNextWave();
         }
     }
+
+    void Update()
+    {
+        if(wonTimer > 0)
+        {
+            wonTimer -= Time.deltaTime;
+            if(wonTimer <= 0 )
+            {
+                Color color = finish.color;
+                color.a = 0;
+                finish.color = color;
+                wonFlag = true;
+            }
+        }
+    }
+
 }

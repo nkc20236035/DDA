@@ -15,4 +15,4 @@ MonoBehaviour:
   enemyName: 
   maxHP: 7
   attackPower: 200
-  attackTime: 3
+  attackTime: 12

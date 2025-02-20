@@ -10,7 +10,6 @@ public class EnemyContlloer : MonoBehaviour
 {
     public EnemyData enemyData;
     public Text timertext;
-    public Slider HPSlider;
 
     private int currentHP;
     private int currentAttack;
