@@ -17,6 +17,7 @@ public class EnemyGenerator : MonoBehaviour
     private int totalEnemiesInWave = 0;  // 1ウェーブの敵の数
 
     ImageMove imagemove;
+    StageManager stagemanager;
 
     private Vector3[] spawnOffsets =
     {
@@ -35,6 +36,7 @@ public class EnemyGenerator : MonoBehaviour
         color.a = 0f;
         finish.color = color;
         imagemove = GameObject.Find("Won").GetComponent<ImageMove>();
+        stagemanager = GameObject.Find("StageManager").GetComponent<StageManager>();
     }
 
     void StartNextWave()
@@ -52,6 +54,7 @@ public class EnemyGenerator : MonoBehaviour
             Color color = finish.color;
             color.a = 1f;
             finish.color = color;
+            stagemanager.finish();
             wonTimer = 3f;
         }
     }

@@ -1,4 +1,5 @@
 ﻿using Unity.VisualScripting;
+using UnityEditor.EditorTools;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,12 @@ public class SimplePlayerController : MonoBehaviour
     public int HP;
     public Slider HPSlider;
     public Image LoseSprite;
+    public AudioClip HitDamage;
+    public AudioClip Attackvoice;
+    public AudioClip GameOverAudio;
+    public AudioClip ClearAudio;
+    public GameObject enemy;
+    public Text timeText;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -18,6 +25,10 @@ public class SimplePlayerController : MonoBehaviour
     private bool isfading = false;
     private float alpha = 0f;
     private float fedeSpeed = 1f;
+    private float Attacktime = 0;
+
+    AudioSource AudSou;
+    EnemyGenerator enemygene;
 
 
     // Start is called before the first frame update
@@ -31,7 +42,9 @@ public class SimplePlayerController : MonoBehaviour
         Color color = LoseSprite.color;
         color.a = 0f;
         LoseSprite.color = color;
-
+        AudSou = GetComponent<AudioSource>();
+        enemygene = enemy.GetComponent<EnemyGenerator>();
+        timeText.text = "0.0";
     }
 
     void Update()
@@ -52,6 +65,18 @@ public class SimplePlayerController : MonoBehaviour
             }
         }
 
+        if(Attacktime > 0)
+        {
+            Attacktime -= Time.deltaTime;
+            timeText.text = Attacktime.ToString("0.0");
+            if(Attacktime <= 0)
+            {
+                Attacktime = 0;
+                timeText.text = "0.0";
+            }
+        }
+
+
         if(isfading)
         {
             alpha += fedeSpeed * Time.deltaTime;
@@ -59,6 +84,8 @@ public class SimplePlayerController : MonoBehaviour
             Color color1 = LoseSprite.color;
             color1.a = alpha;
             LoseSprite.color = color1;
+            AudSou.clip = GameOverAudio;
+            AudSou.Play();
             if (alpha >= 1f)
             {
                 isfading = false;
@@ -93,6 +120,8 @@ public class SimplePlayerController : MonoBehaviour
         if (alive)
         {
             anim.SetTrigger("attack");
+            AudSou.clip = Attackvoice;
+            AudSou.Play();
         }
     }
     void Hurt()
@@ -100,6 +129,8 @@ public class SimplePlayerController : MonoBehaviour
         if (alive)
         {
             anim.SetTrigger("hurt");
+            AudSou.clip = HitDamage;
+            AudSou.Play();
             if (direction == 1)
                 rb.AddForce(new Vector2(-5f, 1f), ForceMode2D.Impulse);
             else
@@ -114,6 +145,17 @@ public class SimplePlayerController : MonoBehaviour
             alive = false;
             timer = 1f;
         }
+    }
+
+    public void won()
+    {
+        AudSou.clip = ClearAudio;
+        AudSou.Play();
+    }
+
+    public void AttackTimer(float t)
+    {
+        Attacktime = t;
     }
 
 }

@@ -19,6 +19,11 @@ public class StageManager : MonoBehaviour
     private float commandTime;
     SimplePlayerController playerController;
 
+    public AudioClip BattleAudio;
+    public AudioClip finished;
+    public AudioClip FinishAudio;
+    AudioSource audiosource;
+
 
     void Start()
     {
@@ -34,6 +39,9 @@ public class StageManager : MonoBehaviour
         commandTime = 0;
         isPlaying = true;
         playerController = GameObject.Find("Wizard").GetComponent<SimplePlayerController>();
+        audiosource = GetComponent<AudioSource>();
+        audiosource.clip = BattleAudio;
+        audiosource.Play();
     }
 
     void Update()
@@ -93,5 +101,21 @@ public class StageManager : MonoBehaviour
     public void getTime(float t)
     {
         commandTime = t;
+    }
+
+    public void finish()
+    {
+        audiosource.clip = null;
+        audiosource.loop = false;
+        audiosource.clip = finished;
+        audiosource.Play();
+    }
+
+    public void clear()
+    {
+        audiosource.clip = null;
+        audiosource.loop = true;
+        audiosource.clip = FinishAudio;
+        audiosource.Play();
     }
 }

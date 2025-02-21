@@ -9,6 +9,7 @@ public class CommandContlloer : MonoBehaviour
     private bool isDragging = false; // ドラッグ中かどうか
     private Camera mainCamera; // カメラ参照
     StageManager stageManager;
+    SimplePlayerController playercontroller;
 
     public CommandData commandData;
     private int Attack;
@@ -18,6 +19,7 @@ public class CommandContlloer : MonoBehaviour
         mainCamera = Camera.main;
         initialPosition = transform.position; // 初期位置を記録
         stageManager = GameObject.Find("StageManager").GetComponent<StageManager>();
+        playercontroller = GameObject.Find("Wizard").GetComponent<SimplePlayerController>();
 
         if(commandData != null )
         {
@@ -60,6 +62,7 @@ public class CommandContlloer : MonoBehaviour
                 Debug.Log("敵検知");
                 enemy.SetAttack(Attack,AttackTime); // EnemyContlloerのTakeDamageに代入
                 stageManager.getTime(AttackTime);
+                playercontroller.AttackTimer(AttackTime);
                 stageManager.Commandflag = false;
                 Destroy(gameObject); // 自分を破壊
             }

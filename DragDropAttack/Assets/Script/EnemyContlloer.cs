@@ -10,6 +10,8 @@ public class EnemyContlloer : MonoBehaviour
 {
     public EnemyData enemyData;
     public Text timertext;
+    public AudioClip HitDamage;
+    public Slider HPSlider;
 
     private int currentHP;
     private int currentAttack;
@@ -20,12 +22,14 @@ public class EnemyContlloer : MonoBehaviour
     private float Timer = 0f;
     SimplePlayerController playercontlloer;
     StageManager stagemanager;
+    AudioSource aud;
 
     void Start()
     {
         EnemyGene = GameObject.Find("EnemyGene").GetComponent<EnemyGenerator>();
         playercontlloer = GameObject.Find("Wizard").GetComponent<SimplePlayerController>();
         stagemanager = GameObject.Find ("StageManager").GetComponent<StageManager>();
+        aud = GetComponent<AudioSource>();
 
         if (enemyData != null)
         {
@@ -37,7 +41,9 @@ public class EnemyContlloer : MonoBehaviour
         {
             Debug.LogError("EnemyData‚È‚µ");
         }
-
+        
+        HPSlider.maxValue = currentHP;
+        HPSlider.value = currentHP;
 
     }
 
@@ -64,11 +70,13 @@ public class EnemyContlloer : MonoBehaviour
                 if (currentAttackTime < 0)
                 {
                     playercontlloer.getDamage(currentAttack);
+                    aud.clip = HitDamage;
+                    aud.Play();
                     currentAttackTime = enemyData.attackTime;
                 }
             }
-        }
 
+        }
 
     }
 
@@ -83,7 +91,10 @@ public class EnemyContlloer : MonoBehaviour
         
         currentHP -= damage;
         playercontlloer.Attack();
+        aud.clip = HitDamage;
+        aud.Play();
         Debug.Log($"{enemyData.enemyName} ‚Í {damage} ƒ_ƒ[ƒW‚ðŽó‚¯‚½");
+        HPSlider.value = currentHP;
         if (currentHP <= 0)
         {
             Die();
