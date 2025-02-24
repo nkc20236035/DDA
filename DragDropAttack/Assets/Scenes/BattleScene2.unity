@@ -954,7 +954,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab:
   - {fileID: 1572174039860298, guid: 720adab1621b29445a8264b44d3d2711, type: 3}
-  - {fileID: 1572174039860298, guid: b534f6712d7673840b5ef30a4b42edee, type: 3}
+  - {fileID: 1572174039860298, guid: 73f3f851c72e24a4da0bbc2db78d749d, type: 3}
   - {fileID: 1572174039860298, guid: 0a97c07663527b649b725faf57f5590d, type: 3}
   - {fileID: 1572174039860298, guid: 47822b194a2ed404b8c4f66f3c2c367e, type: 3}
   spawnPoint: {fileID: 1714853238}
@@ -1112,9 +1112,11 @@ MonoBehaviour:
   isPlaying: 0
   image1: {fileID: 195080978}
   image2: {fileID: 1497062420}
-  BattleAudio: {fileID: 8300000, guid: e75b6ac2f9608af4a918cb489bb9c82a, type: 3}
+  BattleAudio: {fileID: 8300000, guid: f565f3a1d5bd8a24f85cedfd6c18470c, type: 3}
   finished: {fileID: 8300000, guid: b7eafe57f342260468e11f8d869a9533, type: 3}
   FinishAudio: {fileID: 8300000, guid: 4f2c2ccf88397b34687c821e5b9dae5f, type: 3}
+  currentStage: 2
+  targetTag: Command
 --- !u!4 &1020797766
 Transform:
   m_ObjectHideFlags: 0
@@ -1629,7 +1631,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -10
-  m_Sprite: {fileID: 21300000, guid: 48e43efa28befbe47b5f9080ba0287f9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c83e123419e06e2478f9379dfd520ad1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

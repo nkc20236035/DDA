@@ -8,12 +8,14 @@ public class CommandGenerator : MonoBehaviour
     public Transform spawnArea;
     public int commandCount = 3;          // 表示する最大コマンド数
     public float spacing = 3f;
+    StageManager stageManager;
     
     private List<GameObject> activeCommands = new List<GameObject>();
 
     void Start()
     {
         GenerateCommands();
+        stageManager = GameObject.Find("StageManager").GetComponent<StageManager>();
     }
 
     void GenerateCommands()
@@ -43,7 +45,7 @@ public class CommandGenerator : MonoBehaviour
     public void OnCommandDestroyed(GameObject command)
     {
         activeCommands.Remove(command);
-        if(activeCommands.Count == 0)
+        if(stageManager.isPlaying == true && activeCommands.Count == 0)
         {
             GenerateCommands();
         }

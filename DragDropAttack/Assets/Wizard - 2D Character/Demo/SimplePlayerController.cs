@@ -1,6 +1,4 @@
-﻿using Unity.VisualScripting;
-using UnityEditor.EditorTools;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class SimplePlayerController : MonoBehaviour

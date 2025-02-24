@@ -9,7 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScene.unity
     guid: 469ea1c75097efa4784d170e795d12de
   - enabled: 1
-    path: Assets/Scenes/BattleScene.unity
+    path: Assets/Scenes/StageSelectScene.unity
+    guid: c7eab1903a93e9646b631712c9d61902
+  - enabled: 1
+    path: Assets/Scenes/BattleScene1.unity
     guid: f538a982e4d623a4698a83801c215ef2
   - enabled: 1
     path: Assets/Scenes/BattleScene2.unity

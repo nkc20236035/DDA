@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class StageManager : MonoBehaviour
@@ -17,12 +18,17 @@ public class StageManager : MonoBehaviour
     private float alpha = 0f;
     private float fedeSpeed = 1.0f;
     private float commandTime;
+    private bool NextStage = false;
     SimplePlayerController playerController;
 
     public AudioClip BattleAudio;
     public AudioClip finished;
     public AudioClip FinishAudio;
     AudioSource audiosource;
+    StageSelect stageselect;
+    public int currentStage; // このステージの番号
+    public string targetTag = "Command"; // 削除したいオブジェクトのタグ
+
 
 
     void Start()
@@ -42,6 +48,7 @@ public class StageManager : MonoBehaviour
         audiosource = GetComponent<AudioSource>();
         audiosource.clip = BattleAudio;
         audiosource.Play();
+        stageselect = GetComponent<StageSelect>();
     }
 
     void Update()
@@ -97,6 +104,12 @@ public class StageManager : MonoBehaviour
             isPlaying = false;
         }
 
+        if(NextStage == true && Input.GetKeyDown(KeyCode.Return))
+        { 
+            DestroyAllWithTag();
+            SceneManager.LoadScene("StageSelectScene");
+        }
+
     }
     public void getTime(float t)
     {
@@ -109,6 +122,8 @@ public class StageManager : MonoBehaviour
         audiosource.loop = false;
         audiosource.clip = finished;
         audiosource.Play();
+        isPlaying = false;
+       
     }
 
     public void clear()
@@ -117,5 +132,32 @@ public class StageManager : MonoBehaviour
         audiosource.loop = true;
         audiosource.clip = FinishAudio;
         audiosource.Play();
+        CompleteStage();
+        NextStage = true;
     }
+
+    void CompleteStage()
+    {
+        int unlockedStages = PlayerPrefs.GetInt("UnlockedStages", 1);
+
+        // まだ次のステージが解放されていなければ解放
+        if (unlockedStages <= currentStage)
+        {
+            PlayerPrefs.SetInt("UnlockedStages", currentStage + 1);
+            PlayerPrefs.Save();
+        }
+
+        Debug.Log("Stage " + currentStage + " クリア！次のステージを解放");
+    }
+
+    public void DestroyAllWithTag()
+    {
+        GameObject[] objects = GameObject.FindGameObjectsWithTag(targetTag); // タグのついたオブジェクトを取得
+
+        foreach (GameObject obj in objects)
+        {
+            Destroy(obj); // オブジェクトを削除
+        }
+    }
+
 }
